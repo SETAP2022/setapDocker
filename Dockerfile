@@ -1,6 +1,7 @@
 FROM ubuntu:21.04
 
 RUN apt-get update
+RUN apt-get install -y tzdata
 RUN apt-get install -y pandoc
 RUN apt-get install -y texlive-base
 RUN apt-get install -y texlive-latex-recommended
