@@ -1,13 +1,13 @@
 FROM ubuntu:21.04
 
-RUN apt-get update && \
-    apt-get install -y pandoc && \
-    apt-get texlive-base && \
-    apt-get texlive-latex-recommended && \
-    apt-get texlive && \
-    apt-get texlive-latex-extra && \
-    apt-get texlive-full  && \
-    apt-get clean
+RUN apt-get update
+RUN apt-get install -y pandoc
+RUN apt-get install -y texlive-base
+RUN apt-get install -y texlive-latex-recommended
+RUN apt-get install -y texlive
+RUN apt-get install -y texlive-latex-extra
+RUN apt-get install -y texlive-full
+RUN apt-get clean
 
 #EXPOSE 6379
 
