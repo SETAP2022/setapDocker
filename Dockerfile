@@ -1,9 +1,9 @@
 FROM pandoc/latex:2.11.2
 
-RUN apt-get update
-RUN apt-get install -y tzdata
-RUN apt-get install -y tree
-RUN apt get install -y nano
+RUN apt update
+RUN apt install -y tzdata
+RUN apt install -y tree
+RUN apt install -y nano
 # RUN apt-get install -y pandoc
 # RUN apt-get install -y texlive-base
 # RUN apt-get install -y texlive-latex-recommended
