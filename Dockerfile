@@ -2,7 +2,6 @@ FROM ubuntu:21.04
 #FROM pandoc/latex:2.11.2
 
 RUN apt update
-RUN apt install -y tzdata
 RUN apt install -y tree
 RUN apt install -y nano
 # RUN apt-get install -y pandoc
