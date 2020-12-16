@@ -9,7 +9,8 @@ RUN apt-get install -y nano
 RUN apt-get install -y git
 #RUN apt-get install -y git-all
 RUN apt-get install -y python3
-# RUN apt-get install -y pandoc
+# 156mb
+RUN apt-get install -y pandoc
 # RUN apt-get install -y texlive-base
 # RUN apt-get install -y texlive-latex-recommended
 # RUN apt-get install -y texlive
@@ -20,3 +21,4 @@ RUN apt-get clean
 #EXPOSE 6379
 
 #CMD ["redis-server", "--protected-mode no"]
+CMD ["/bin/bash"]
