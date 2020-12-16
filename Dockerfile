@@ -9,6 +9,12 @@ RUN apt-get install -y nano
 RUN apt-get install -y git
 RUN apt-get install -y pip
 RUN pip install -U pytest
+# ====== GH CLI ======
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+RUN apt-add-repository https://cli.github.com/packages
+RUN apt-get update
+RUN apt-get install gh
+# ====== ======
 #RUN apt-get install -y git-all
 RUN apt-get install -y python3
 # 156mb
