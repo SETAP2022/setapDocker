@@ -4,7 +4,7 @@ FROM ubuntu:21.04
 RUN apt-get update
 RUN apt-get install -y tree
 RUN apt-get install -y nano
-RUN apt-get install -y git-all
+RUN apt-get install -y git
 RUN apt-get install -y git-all
 RUN apt-get install -y python3
 # RUN apt-get install -y pandoc
