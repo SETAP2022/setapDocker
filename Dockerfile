@@ -1,7 +1,8 @@
-#FROM ubuntu:21.04
-FROM pandoc/latex:2.11.2
+FROM ubuntu:21.04
+#FROM pandoc/latex:2.11.2
 
 RUN apt-get update
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install tzdata
 RUN apt-get install -y tree
 RUN apt-get install -y nano
 RUN apt-get install -y git
