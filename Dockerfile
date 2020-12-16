@@ -1,5 +1,5 @@
-FROM ubuntu:21.04
-#FROM pandoc/latex:2.11.2
+#FROM ubuntu:21.04
+FROM pandoc/latex:2.11.2
 
 RUN apt-get update
 RUN apt-get install -y tree
