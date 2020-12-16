@@ -7,6 +7,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install tzdata
 RUN apt-get install -y tree
 RUN apt-get install -y nano
 RUN apt-get install -y git
+RUN apt-get install -y pip
+RUN pip install -U pytest
 #RUN apt-get install -y git-all
 RUN apt-get install -y python3
 # 156mb
