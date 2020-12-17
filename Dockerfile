@@ -22,6 +22,7 @@ RUN gem install mdl
 RUN apt-get install -y python3
 RUN apt-get install -y pip
 RUN pip install -U pytest
+RUN apt-get install pep8
 
 # 156mb
 # ===== Pandoc Stuff ======
