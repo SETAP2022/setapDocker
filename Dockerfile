@@ -4,6 +4,7 @@ FROM ubuntu:21.04
 RUN apt-get update
 # Beware tzdata prompts for input
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install tzdata
+RUN apt-get update
 
 # ===== Tools======
 RUN apt-get install -y gnupg2
