@@ -1,10 +1,12 @@
-FROM ubuntu:21.04
+FROM ubuntu:20.04
 #FROM pandoc/latex:2.11.2
 
 RUN apt-get update
 # Beware tzdata prompts for input
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install tzdata
+RUN apt-get install -y apt-utils
 RUN apt-get update
+RUN apt-get install -y software-properties-common
 
 # ===== Tools======
 RUN apt-get install -y gnupg2
@@ -16,14 +18,15 @@ RUN apt-get install -y git
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 RUN apt-add-repository https://cli.github.com/packages
 RUN apt-get update
-RUN apt-get install gh
+RUN apt-get install -y gh
 # ====== Markdown lint ======
+RUN apt-get install -y ruby
 RUN gem install mdl
 #RUN apt-get install -y git-all
 # ====== Python ======
 RUN apt-get install -y python3
-RUN apt-get install -y pip
-RUN pip install -U pytest
+RUN apt-get install -y python3-pip
+RUN pip3 install -U pytest
 RUN apt-get install -y pep8
 
 # 156mb
