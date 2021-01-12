@@ -32,6 +32,7 @@ RUN apt-get install -y pep8
 # 156mb
 # ===== Pandoc Stuff ======
 RUN apt-get install -y pandoc
+# For svg files
 RUN apt-get install -y librsvg2-bin
 # RUN apt-get install -y texlive-base
 # RUN apt-get install -y texlive-latex-recommended
