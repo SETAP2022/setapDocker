@@ -13,6 +13,7 @@ RUN apt-get install -y gnupg2
 RUN apt-get install -y tree
 RUN apt-get install -y nano
 RUN apt-get install -y git
+RUN apt-get install -y wget
 
 # ====== GH CLI ======
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
@@ -31,7 +32,10 @@ RUN apt-get install -y pep8
 
 # 156mb
 # ===== Pandoc Stuff ======
+RUN apt-get install -y texlive-xetex
 RUN apt-get install -y pandoc
+RUN wget https://github.com/jgm/pandoc/releases/download/2.11.3.2/pandoc-2.11.3.2-1-amd64.deb
+RUN dpkg -i pandoc-2.11.3.2-1-amd64.deb
 RUN apt-get install -y librsvg2-bin
 # RUN apt-get install -y texlive-base
 # RUN apt-get install -y texlive-latex-recommended
