@@ -36,6 +36,7 @@ RUN apt-get install -y texlive-xetex
 RUN apt-get install -y pandoc
 RUN wget https://github.com/jgm/pandoc/releases/download/2.11.3.2/pandoc-2.11.3.2-1-amd64.deb
 RUN dpkg -i pandoc-2.11.3.2-1-amd64.deb
+# For svg files
 RUN apt-get install -y librsvg2-bin
 # RUN apt-get install -y texlive-base
 # RUN apt-get install -y texlive-latex-recommended
