@@ -1,6 +1,7 @@
 Bootstrap: library
 From: nitishnarula/secure/ubuntu-focal:20210121
 
+%post
  export DEBIAN_FRONTEND=noninteractive
 # Updates
  apt-get update
