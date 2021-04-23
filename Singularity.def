@@ -1,0 +1,45 @@
+Bootstrap: library
+#From: default/ubuntu:20.04
+From: nitishnarula/secure/ubuntu-focal:20210121
+
+%post
+ export DEBIAN_FRONTEND=noninteractive
+ apt-get update
+ apt-get -y upgrade
+ apt-get install tzdata
+ apt-get install -y apt-utils
+ apt-get update
+ apt-get upgrade
+ apt -y install software-properties-common rsync wget
+ apt-get install -y software-properties-common
+ apt-get install -y gnupg2
+ apt-get install -y tree
+ apt-get install -y nano
+ apt-get install -y git
+ apt-get install -y wget
+
+# ====== GH CLI ======
+ apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+ apt-add-repository https://cli.github.com/packages
+ apt-get update
+ apt-get install -y gh
+
+# ====== Markdown lint ======
+ apt-get install -y ruby
+ gem install mdl
+
+# ====== Python ======
+ apt-get install -y python3
+ apt-get install -y python3-pip
+ pip3 install -U pytest
+ apt-get install -y pep8
+
+
+# ===== Pandoc Stuff ======
+ apt-get install -y texlive-xetex
+ apt-get install -y pandoc
+ wget https://github.com/jgm/pandoc/releases/download/2.11.3.2/pandoc-2.11.3.2-1-amd64.deb
+ dpkg -i pandoc-2.11.3.2-1-amd64.deb
+#==== For svg files====
+ apt-get install -y librsvg2-bin
+ apt-get clean
