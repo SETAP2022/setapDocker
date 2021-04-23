@@ -59,7 +59,7 @@ RUN apt-get install -y librsvg2-bin
 #=========GO - Singularity=========
 RUN wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzvf go1.15.11.linux-amd64.tar.gz
-RUN rm go$VERSION.$OS-$ARCH.tar.gz
+RUN rm go1.15.11.linux-amd64.tar.gz
 RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
 RUN echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
 RUN source ~/.bashrc
@@ -68,6 +68,7 @@ RUN go version
 #========== Singularity===========
 RUN wget https://github.com/hpcng/singularity/releases/download/v3.7.3/singularity-3.7.3.tar.gz
 RUN tar -xzf singularity-3.7.3.tar.gz
+RUN rm -f singularity-3.7.3.tar.gz
 RUN cd singularity
 RUN ./mconfig
 RUN make -C ./builddir
