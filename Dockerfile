@@ -6,9 +6,10 @@ RUN apt-get update
 RUN apt-get -y upgrade
 # Core tools
 # Beware tzdata prompts for input
-RUN apt-get install tzdata
+RUN apt-get install -y tzdata
 RUN apt-get install -y apt-utils
-RUN apt-get install -y software-properties-common
+RUN apt-get install -y software-properties-common rsync
+
 
 # ===== Tools======
 RUN apt-get install -y gnupg2
@@ -45,7 +46,8 @@ RUN apt-get install -y openjdk-14-jdk-headless
 
 #======NPM=====
 RUN apt-get install -y npm
-RUN npm i --save-dev eslint eslint-config-portsoc
+#RUN npm i --save-dev eslint eslint-config-portsoc
+RUN npm i eslint eslint-config-portsoc
 RUN npm install log4js
 
 # ===== Pandoc Stuff ======

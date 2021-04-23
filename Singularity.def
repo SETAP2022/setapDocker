@@ -6,12 +6,9 @@ From: nitishnarula/secure/ubuntu-focal:20210121
  export DEBIAN_FRONTEND=noninteractive
  apt-get update
  apt-get -y upgrade
- apt-get install tzdata
+ apt-get install -y tzdata
  apt-get install -y apt-utils
- apt-get update
- apt-get upgrade
- apt -y install software-properties-common rsync wget
- apt-get install -y software-properties-common
+ apt-get install -y software-properties-common rsync wget
  apt-get install -y gnupg2
  apt-get install -y tree
  apt-get install -y nano
@@ -54,13 +51,14 @@ export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 go version
 
 #========== Singularity===========
+ cd /root
  wget https://github.com/hpcng/singularity/releases/download/v3.7.3/singularity-3.7.3.tar.gz
  tar -xzf singularity-3.7.3.tar.gz
- rm -f singularity-3.7.3.tar.gz
- cd singularity && \
-./mconfig && \
-make -C ./builddir  && \
-make -C ./builddir install
+ cd singularity
+ ./mconfig
+ make -C ./builddir
+ make -C ./builddir install
  rm -rf singularity/
+ rm -f singularity-3.7.3.tar.gz
  singularity --version
  apt-get clean
