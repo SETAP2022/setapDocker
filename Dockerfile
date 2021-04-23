@@ -56,9 +56,24 @@ RUN dpkg -i pandoc-2.11.3.2-1-amd64.deb
 # For svg files
 RUN apt-get install -y librsvg2-bin
 
-#=========Singularity=========
+#=========GO - Singularity=========
+RUN export VERSION=1.15.11 OS=linux ARCH=amd64
+RUN wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+RUN tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
+RUN rm go$VERSION.$OS-$ARCH.tar.gz
+RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
+RUN echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+RUN source ~/.bashrc
+RUN go version
 
-
+#========== Singularity===========
+RUN wget https://github.com/hpcng/singularity/releases/download/v3.7.3/singularity-3.7.3.tar.gz
+RUN tar -xzf singularity-3.7.3.tar.gz
+RUN cd singularity
+RUN ./mconfig
+RUN make -C ./builddir
+RUN make -C ./builddir install
+RUN cd .. && rm -rf singularity/
 
 # Clean up a bit
 RUN apt-get clean
