@@ -64,7 +64,6 @@ RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
 ENV GOPATH=${HOME}/go
 RUN echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
 ENV PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
-RUN . ~/.bashrc
 RUN go version
 
 #========== Singularity===========
@@ -76,6 +75,7 @@ RUN cd singularity && \
 make -C ./builddir  && \
 make -C ./builddir install
 RUN rm -rf singularity/
+RUN singularity --version
 
 # Clean up a bit
 RUN apt-get clean

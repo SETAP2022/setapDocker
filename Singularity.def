@@ -62,5 +62,5 @@ go version
  make -C ./builddir
  make -C ./builddir install
  cd .. && rm -rf singularity/
-
+ singularity --version
  apt-get clean
