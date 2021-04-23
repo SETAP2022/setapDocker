@@ -71,6 +71,7 @@ export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
  go version
 
 #========== Singularity===========
+cd /root
  wget https://github.com/hpcng/singularity/releases/download/v3.7.3/singularity-3.7.3.tar.gz
  tar -xzf singularity-3.7.3.tar.gz
  rm -f singularity-3.7.3.tar.gz
