@@ -48,8 +48,9 @@ wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz
 tar -C /usr/local -xzvf go1.15.11.linux-amd64.tar.gz
 rm go1.15.11.linux-amd64.tar.gz
 echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
+export GOPATH=${HOME}/go
 echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
-. ~/.bashrc
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 go version
 
 #========== Singularity===========
