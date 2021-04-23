@@ -57,8 +57,7 @@ RUN dpkg -i pandoc-2.11.3.2-1-amd64.deb
 RUN apt-get install -y librsvg2-bin
 
 #=========GO - Singularity=========
-RUN export VERSION=1.15.11 OS=linux ARCH=amd64
-RUN wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+RUN wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
 RUN rm go$VERSION.$OS-$ARCH.tar.gz
 RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
