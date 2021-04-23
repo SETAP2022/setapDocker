@@ -61,7 +61,9 @@ RUN wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzvf go1.15.11.linux-amd64.tar.gz
 RUN rm go1.15.11.linux-amd64.tar.gz
 RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
+RUN export 'GOPATH=${HOME}/go'
 RUN echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
+RUN 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin'
 RUN . ~/.bashrc
 RUN go version
 
