@@ -63,7 +63,7 @@ RUN rm go1.15.11.linux-amd64.tar.gz
 RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
 ENV 'GOPATH=${HOME}/go'
 RUN echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
-RUN 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin'
+ENV 'PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin'
 RUN . ~/.bashrc
 RUN go version
 
