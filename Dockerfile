@@ -74,7 +74,7 @@ RUN rm -f singularity-3.7.3.tar.gz
 RUN cd singularity && \
 ./mconfig && \
 make -C ./builddir  && \
-make -C ./builddir install  && \
+make -C ./builddir install
 RUN rm -rf singularity/
 
 # Clean up a bit
