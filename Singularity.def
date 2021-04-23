@@ -84,5 +84,3 @@ make -C ./builddir install
 
 # Clean up a bit
  apt-get clean
-
-CMD ["/bin/bash"]
