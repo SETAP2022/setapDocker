@@ -62,7 +62,7 @@ RUN tar -C /usr/local -xzvf go1.15.11.linux-amd64.tar.gz
 RUN rm go1.15.11.linux-amd64.tar.gz
 RUN echo 'export GOPATH=${HOME}/go' >> ~/.bashrc
 RUN echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc
-RUN source ~/.bashrc
+RUN . ~/.bashrc
 RUN go version
 
 #========== Singularity===========
