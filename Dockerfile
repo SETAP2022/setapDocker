@@ -71,7 +71,7 @@ RUN go version
 RUN wget https://github.com/hpcng/singularity/releases/download/v3.7.3/singularity-3.7.3.tar.gz
 RUN tar -xzf singularity-3.7.3.tar.gz
 RUN rm -f singularity-3.7.3.tar.gz
-RUN cd singularity
+RUN cd singularity && ./mconfig
 RUN ./mconfig
 RUN make -C ./builddir
 RUN make -C ./builddir install
