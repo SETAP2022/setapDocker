@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN export DEBIAN_FRONTEND=noninteractive  && \
-# Updates
+    # Updates
     apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
