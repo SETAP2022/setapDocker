@@ -1,8 +1,9 @@
 FROM ubuntu:20.04
 #DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends
-RUN export DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
+
+    # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
     # Updates
-    apt-get update  && \
+RUN apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
     # Beware tzdata prompts for input
