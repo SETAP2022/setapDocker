@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
-
-RUN export DEBIAN_FRONTEND=noninteractive  && \
+#DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends
+RUN export DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
     # Updates
     apt-get update  && \
     apt-get -y upgrade  && \
