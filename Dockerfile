@@ -19,8 +19,8 @@ RUN apt-get update  && \
     apt-get install -y curl  && \
     apt-get install -y pdftk  && \
     # Clean up a bit
-    pt-get -y autoremove && \
-    pt-get clean autoclean && \
+    apt-get -y autoremove && \
+    apt-get clean autoclean && \
     rm -fr /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/* && \
     rm -rf /var/lib/apt/lists/*
     # ====== GH CLI ======
