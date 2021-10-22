@@ -90,6 +90,11 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 RUN DEBIAN_FRONTEND=noninteractive &&\
     apt-get update  && \
     apt-get -y upgrade  && \
+    # Images
+    apt-get install -y  imagemagick  && \
+    #Git
+    apt-get install -y gitinspector && \
+    apt-get install -y wkhtmltopdf  && \
     #=========GO - Singularity=========
     wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz  && \
     tar -C /usr/local -xzvf go1.15.11.linux-amd64.tar.gz  && \
@@ -109,13 +114,8 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
     make -C ./builddir install && \
     rm -rf singularity/  && \
     singularity --version && \
-    # Images
-    apt-get install -y  imagemagick  && \
-    #Git
-    apt-get install -y gitinspector && \
-    apt-get install -y wkhtmltopdf  && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/* &&\
-    echo "done"
+    echo "Done"
 
 CMD ["/bin/bash"]
