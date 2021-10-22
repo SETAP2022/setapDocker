@@ -3,7 +3,8 @@ FROM ubuntu:20.04
 
     # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
     # Updates
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
     # Beware tzdata prompts for input
