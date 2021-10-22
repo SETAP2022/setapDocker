@@ -6,7 +6,7 @@ FROM ubuntu:20.04
 RUN apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
-    DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration  && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration  && \
     # Beware tzdata prompts for input
     apt-get install -y tzdata  && \
     apt-get install -y apt-utils  && \
