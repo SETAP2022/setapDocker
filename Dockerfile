@@ -105,6 +105,7 @@ RUN apt-get update  && \
     apt-get install -y  imagemagick  && \
     #Git
     apt-get install -y gitinspector && \
+    apt-get install -y wkhtmltopdf  && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/* &&\
     echo "done"
