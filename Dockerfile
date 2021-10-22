@@ -3,10 +3,10 @@ FROM ubuntu:20.04
 
     # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
     # Updates
-RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration &&\
-    apt-get update  && \
+RUN apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
+    DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration  && \
     # Beware tzdata prompts for input
     apt-get install -y tzdata  && \
     apt-get install -y apt-utils  && \
