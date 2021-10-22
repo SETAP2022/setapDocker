@@ -25,7 +25,8 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
     rm -fr /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/* && \
     rm -rf /var/lib/apt/lists/*
     # ====== GH CLI ======
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0  && \
     apt-add-repository https://cli.github.com/packages  && \
@@ -37,14 +38,16 @@ RUN apt-get update  && \
     git lfs install && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     # ====== Markdown lint ======
     apt-get install -y ruby && \
     gem install mdl && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     # ====== Python ======
     apt-get install -y python3 && \
@@ -54,13 +57,15 @@ RUN apt-get update  && \
     apt-get install -y pep8 && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     # == Java===
     apt-get install -y openjdk-17-jdk-headless && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     #======NPM=====
     apt-get install -y npm && \
@@ -69,7 +74,8 @@ RUN apt-get update  && \
     npm install log4js && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     # ===== Pandoc Stuff ======
     apt-get install -y texlive-xetex  && \
@@ -81,7 +87,8 @@ RUN apt-get update  && \
     apt-get install -y librsvg2-bin  && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+    apt-get update  && \
     apt-get -y upgrade  && \
     #=========GO - Singularity=========
     wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz  && \
