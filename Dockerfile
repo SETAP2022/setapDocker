@@ -102,6 +102,9 @@ RUN apt-get update  && \
     rm -rf singularity/  && \
     singularity --version && \
     # Clean up a bit
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* &&\
+    # Images
+    apt-get install -y  imagemagick  && \
+    echo "done"
 
 CMD ["/bin/bash"]
