@@ -56,7 +56,7 @@ RUN apt-get update  && \
 RUN apt-get update  && \
     apt-get -y upgrade  && \
     # == Java===
-    apt-get install -y openjdk-14-jdk-headless && \
+    apt-get install -y openjdk-17-jdk-headless && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update  && \
