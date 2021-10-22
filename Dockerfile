@@ -101,10 +101,12 @@ RUN apt-get update  && \
     make -C ./builddir install && \
     rm -rf singularity/  && \
     singularity --version && \
-    # Clean up a bit
-    rm -rf /var/lib/apt/lists/* &&\
     # Images
     apt-get install -y  imagemagick  && \
+    #Git
+    apt-get install -y gitinspector && \
+    # Clean up a bit
+    rm -rf /var/lib/apt/lists/* &&\
     echo "done"
 
 CMD ["/bin/bash"]
