@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
     # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
     # Updates
-RUN DEBIAN_FRONTEND=noninteractive &&\
+RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration &&\
     apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
