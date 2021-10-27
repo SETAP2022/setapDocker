@@ -83,18 +83,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	# ===== Pandoc Stuff ======
 	apt-get install -y texlive-xetex  && \
 	apt-get install -y pandoc  && \
-	case $TARGETARCH in\
-	amd64)\
-	wget https://github.com/jgm/pandoc/releases/download/2.11.3.2/pandoc-2.15-1-amd64.deb  && \
-	dpkg -i pandoc-2.15-1-amd64.deb  && \
-	rm pandoc-2.15-1-amd64.deb && \
-	;;\
-	arm64)\
-	wget https://github.com/jgm/pandoc/releases/download/2.15/pandoc-2.15-1-arm64.deb && \
-	dpkg -i pandoc-2.15-1-arm64.deb && \
-	rm pandoc-2.15-1-arm64.deb && \
-	;;\
-	esac && \
+	./install/pandoc.$TARGETARCH.sh  && \
 	# For svg files
 	apt-get install -y librsvg2-bin  && \
 	# Clean up a bit
@@ -108,18 +97,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	apt-get install -y gitinspector && \
 	apt-get install -y wkhtmltopdf  && \
 	#=========GO - Singularity=========
-	case $TARGETARCH in\
-	amd64)\
-	wget https://dl.google.com/go/go1.15.11.linux-amd64.tar.gz  && \
-	tar -C /usr/local -xzvf go1.15.11.linux-amd64.tar.gz  && \
-	rm go1.15.11.linux-amd64.tar.gz  && \
-	;;\
-	arm64)\
-	wget https://dl.google.com/go/go1.15.11.linux-arm64.tar.gz  && \
-	tar -C /usr/local -xzvf go1.15.11.linux-arm64.tar.gz  && \
-	rm go1.15.11.linux-arm64.tar.gz  && \
-	;;\
-	esac && \
+	./install/go.$TARGETARCH.sh  && \
 	echo 'export GOPATH=${HOME}/go' >> ~/.bashrc  && \
 	export GOPATH=${HOME}/go  && \
 	echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc  && \
