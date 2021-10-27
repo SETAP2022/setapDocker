@@ -2,6 +2,9 @@ FROM ubuntu:20.04
 
 ARG TARGETARCH
 
+COPY ./install ./install
+
+RUN echo "Building {$TARGETARCH}"
 #DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends
 
 # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
@@ -83,7 +86,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	# ===== Pandoc Stuff ======
 	apt-get install -y texlive-xetex  && \
 	apt-get install -y pandoc  && \
-	./install/pandoc.$TARGETARCH.sh  && \
+	"./install/pandoc.$TARGETARCH.sh"  && \
 	# For svg files
 	apt-get install -y librsvg2-bin  && \
 	# Clean up a bit
@@ -97,7 +100,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	apt-get install -y gitinspector && \
 	apt-get install -y wkhtmltopdf  && \
 	#=========GO - Singularity=========
-	./install/go.$TARGETARCH.sh  && \
+	"./install/go.$TARGETARCH.sh"  && \
 	echo 'export GOPATH=${HOME}/go' >> ~/.bashrc  && \
 	export GOPATH=${HOME}/go  && \
 	echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc  && \
