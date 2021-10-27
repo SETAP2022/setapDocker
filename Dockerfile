@@ -86,6 +86,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	# ===== Pandoc Stuff ======
 	apt-get install -y texlive-xetex  && \
 	apt-get install -y pandoc  && \
+	chmod +x "./install/pandoc.$TARGETARCH.sh" && \
 	"./install/pandoc.$TARGETARCH.sh"  && \
 	# For svg files
 	apt-get install -y librsvg2-bin  && \
@@ -100,6 +101,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	apt-get install -y gitinspector && \
 	apt-get install -y wkhtmltopdf  && \
 	#=========GO - Singularity=========
+	chmod +x "./install/go.$TARGETARCH.sh" && \
 	"./install/go.$TARGETARCH.sh"  && \
 	echo 'export GOPATH=${HOME}/go' >> ~/.bashrc  && \
 	export GOPATH=${HOME}/go  && \
