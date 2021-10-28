@@ -5,7 +5,7 @@
 # LOGIN
 docker login ghcr.io -u ossonts
 #Build and tag
-docker build -t ghcr.io/setap2021/setapdocker .
+docker buildx build -t ghcr.io/setap2021/setapdocker .
 
 # TESTING
 # docker run -it  ghcr.io/setap2021/setapdocker
