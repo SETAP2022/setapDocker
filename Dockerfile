@@ -4,7 +4,9 @@ ARG TARGETARCH
 
 COPY ./install ./install
 
-RUN echo "Building {$TARGETARCH}"
+RUN echo "Building $TARGETARCH build"
+
+WORKDIR /
 #DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends
 
 # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
