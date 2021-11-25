@@ -1,5 +1,5 @@
 FROM ubuntu:21.04
-
+#https://docs.docker.com/develop/develop-images/build_enhancements/
 ARG TARGETARCH=amd64
 # --build-arg amd64 / arm64
 
