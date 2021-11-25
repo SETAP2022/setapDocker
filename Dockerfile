@@ -1,6 +1,7 @@
 FROM ubuntu:21.04
 
-ARG TARGETARCH
+ARG TARGETARCH=amd64
+# --build-arg amd64 / arm64
 
 COPY ./install /usr/app/install
 
