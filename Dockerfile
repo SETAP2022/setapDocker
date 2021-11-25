@@ -3,6 +3,14 @@ FROM ubuntu:21.04
 
     # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
     # Updates
+ARG TARGETARCH
+
+COPY ./install /usr/app/install
+
+RUN echo "Building $TARGETARCH build"
+
+WORKDIR /usr/app
+
 RUN apt-get update  && \
     apt-get -y upgrade  && \
     # Core tools
