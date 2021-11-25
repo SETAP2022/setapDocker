@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:21.04
 #DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends
 
     # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
