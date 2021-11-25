@@ -11,6 +11,7 @@ WORKDIR /usr/app
 
 # DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends  && \
 # Updates
+
 RUN apt-get update  && \
 	apt-get -y upgrade  && \
 	# Core tools
