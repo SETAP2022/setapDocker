@@ -65,15 +65,16 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
 RUN DEBIAN_FRONTEND=noninteractive &&\
-    apt-get update  && \
-    apt-get -y upgrade  && \
-    #======NPM=====
-    apt-get install -y npm && \
-    # RUN npm i --save-dev eslint eslint-config-portsoc
-    #npm i eslint eslint-config-portsoc && \
-    npm install log4js && \
-    # Clean up a bit
-    rm -rf /var/lib/apt/lists/*
+	apt-get update  && \
+	apt-get -y upgrade  && \
+	curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+	apt-get install -y nodejs && \
+	#======NPM=====
+	# RUN npm i --save-dev eslint eslint-config-portsoc
+	npm i eslint eslint-config-portsoc && \
+	npm install log4js && \
+	# Clean up a bit
+	rm -rf /var/lib/apt/lists/*
 RUN DEBIAN_FRONTEND=noninteractive &&\
     apt-get update  && \
     apt-get -y upgrade  && \
