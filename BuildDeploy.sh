@@ -4,7 +4,7 @@
 
 # LOGIN
 docker login ghcr.io -u ossonts
-#Build and tag
+#Build and tag # --not-cache (force)
 docker build -t ghcr.io/setap2021/setapdocker .
 
 # TESTING

@@ -70,7 +70,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
     #======NPM=====
     apt-get install -y npm && \
     # RUN npm i --save-dev eslint eslint-config-portsoc
-    npm i eslint eslint-config-portsoc && \
+    #npm i eslint eslint-config-portsoc && \
     npm install log4js && \
     # Clean up a bit
     rm -rf /var/lib/apt/lists/*
