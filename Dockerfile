@@ -134,6 +134,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	make -C ./builddir install && \
 	rm -rf singularity/  && \
 	singularity --version && \
+	apt-get install -y plantuml && \
 	# Clean up a bit
 	rm -rf /var/lib/apt/lists/* &&\
 	echo "Done"
