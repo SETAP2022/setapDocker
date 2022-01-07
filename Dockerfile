@@ -134,6 +134,12 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	make -C ./builddir install && \
 	rm -rf singularity/  && \
 	singularity --version && \
+	# Clean up a bit
+	rm -rf /var/lib/apt/lists/*
+RUN DEBIAN_FRONTEND=noninteractive &&\
+	apt-get update  && \
+	apt-get -y upgrade  && \
+	# tooling
 	apt-get install -y plantuml && \
 	# Clean up a bit
 	rm -rf /var/lib/apt/lists/* &&\
