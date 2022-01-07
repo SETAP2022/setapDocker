@@ -97,7 +97,10 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	apt-get install -y librsvg2-bin  && \
 	# Clean up a bit
 	rm -rf /var/lib/apt/lists/*
-RUN wget https://github.com/marp-team/marp-cli/releases/download/v1.5.0/marp-cli-v1.5.0-linux.tar.gz  && \
+RUN DEBIAN_FRONTEND=noninteractive &&\
+	apt-get update  && \
+	apt-get -y upgrade  && \
+	wget https://github.com/marp-team/marp-cli/releases/download/v1.5.0/marp-cli-v1.5.0-linux.tar.gz  && \
 	tar zxfv marp-cli-v1.5.0-linux.tar.gz && \
 	mv ./marp /usr/bin && \
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
