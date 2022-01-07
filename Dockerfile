@@ -99,7 +99,7 @@ RUN DEBIAN_FRONTEND=noninteractive &&\
 	rm -rf /var/lib/apt/lists/*
 RUN wget https://github.com/marp-team/marp-cli/releases/download/v1.5.0/marp-cli-v1.5.0-linux.tar.gz  && \
 	tar zxfv marp-cli-v1.5.0-linux.tar.gz && \
-	mv ./marp /usr/bin
+	mv ./marp /usr/bin && \
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
 	apt-get install -y  ./google-chrome-stable_current_amd64.deb && \
 	rm ./google-chrome-stable_current_amd64.deb
